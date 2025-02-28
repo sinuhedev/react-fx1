@@ -11,7 +11,7 @@ function createPage (name, isNext, isType) {
     const pageName = name.replaceAll('/', '')
 
     // index.jsx
-    fs.writeFileSync(`${dirName}/index.jsx`,
+    fs.writeFileSync(`${dirName}/${isNext ? 'page.jsx' : 'index.jsx'}`,
 `${isNext
 ? `'use client'
 

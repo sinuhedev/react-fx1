@@ -39,43 +39,43 @@ export default function App () {
         <br />
 
         <div>
-          <Link href='/' className='mr-1'>
+          <Link href='/' className='mr-2'>
             /
           </Link>
-          <Link href='#/' className='mr-1'>
+          <Link href='#/' className='mr-2'>
             Home
           </Link>
-          <Link href='#/Env' className='mr-1'>
+          <Link href='#/Env' className='mr-2'>
             Env
           </Link>
-          <Link href='#/ContextPage' className='mr-1'>
+          <Link href='#/ContextPage' className='mr-2'>
             ContextPage
           </Link>
-          <Link href='#/Mockapi' className='mr-1'>
+          <Link href='#/Mockapi' className='mr-2'>
             Mockapi
           </Link>
-          <Link href='#/MockapiAndContainer' className='mr-1'>
+          <Link href='#/MockapiAndContainer' className='mr-2'>
             MockapiAndContainers
           </Link>
-          <Link href='#/URLSearchParams' value={{ id: 20, user: 'Sinuhe' }} className='mr-1'>
+          <Link href='#/URLSearchParams' value={{ id: 20, user: 'Sinuhe' }} className='mr-2'>
             URLSearchParams
           </Link>
-          <Link href='#/SubPage/Hello' className='mr-1'>
+          <Link href='#/SubPage/Hello' className='mr-2'>
             SubPage/Hello
           </Link>
-          <Link href='#/Translate' className='mr-1'>
+          <Link href='#/Translate' className='mr-2'>
             Translate
           </Link>
-          <Link href='#/CounterPage' className='mr-1'>
+          <Link href='#/CounterPage' className='mr-2'>
             CounterPage
           </Link>
-          <Link href='#/Img' className='mr-1'>
-            Img
+          <Link href='#/Image' className='mr-2'>
+            Image
           </Link>
-          <Link href='#/MediaQuery' className='mr-1'>
+          <Link href='#/MediaQuery' className='mr-2'>
             MediaQuery
           </Link>
-          <Link href='#/NO' className='mr-1'>
+          <Link href='#/NO' className='mr-2'>
             NO
           </Link>
         </div>

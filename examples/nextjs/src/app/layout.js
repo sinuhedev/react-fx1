@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, Suspense } from 'react'
-import 'theme/index.css'
+import 'assets/theme/index.css'
 import { useFx, ReactFx, Icon, I18n } from 'react-fx1'
 import functions from './functions'
 import { Link, Icons, Translate } from 'components'
@@ -49,37 +49,40 @@ function Layout ({ children }) {
           <br />
 
           <div>
-            <Link href='/' className='m-2'>
+            <Link href='/' className='mr-2'>
               /
             </Link>
-            <Link href='/Home' className='m-2'>
+            <Link href='/Home' className='mr-2'>
               Home
             </Link>
-            <Link href='/Env' className='m-2'>
+            <Link href='/Env' className='mr-2'>
               Env
             </Link>
-            <Link href='/ContextPage' className='m-2'>
+            <Link href='/ContextPage' className='mr-2'>
               ContextPage
             </Link>
-            <Link href='/Mockapi' className='m-2'>
+            <Link href='/Mockapi' className='mr-2'>
               Mockapi
             </Link>
-            <Link href='/MockapiAndContainer' className='m-2'>
+            <Link href='/MockapiAndContainer' className='mr-2'>
               MockapiAndContainers
             </Link>
-            <Link href='/URLSearchParams' value={{ id: 20, user: 'Sinuhe' }} className='m-2'>
+            <Link href='/URLSearchParams' value={{ id: 20, user: 'Sinuhe' }} className='mr-2'>
               URLSearchParams
             </Link>
-            <Link href='/SubPage/Hello' className='m-2'>
+            <Link href='/SubPage/Hello' className='mr-2'>
               SubPage/Hello
             </Link>
-            <Link href='/Translate' className='m-2'>
+            <Link href='/Translate' className='mr-2'>
               Translate
             </Link>
-            <Link href='/CounterPage' className='m-2'>
+            <Link href='/CounterPage' className='mr-2'>
               CounterPage
             </Link>
-            <Link href='/MediaQuery' className='m-2'>
+            <Link href='/Image' className='mr-2'>
+              Image
+            </Link>
+            <Link href='/MediaQuery' className='mr-2'>
               MediaQuery
             </Link>
             <Link href='/NO'>NO</Link>

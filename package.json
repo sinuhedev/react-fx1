@@ -1,0 +1,40 @@
+{
+	"name": "react-fx1",
+	"description": "Create fast web applications",
+	"version": "0.0.1",
+	"type": "module",
+	"license": "MIT",
+	"author": {
+		"name": "Sinuhe Maceda",
+		"email": "sinuhe.dev@gmail.com",
+		"url": "https://sinuhe.dev"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sinuhedev/react-fx1.git"
+	},
+	"keywords": [
+		"react"
+	],
+	"main": "src/lib/index.js",
+	"bin": {
+		"react-fx1": "src/bin.js"
+	},
+	"eslintConfig": {
+		"extends": "./node_modules/standard/eslintrc.json"
+	},
+	"scripts": {
+		"start": "echo 'go to examples'",
+		"clean": "rm -fr node_modules package-lock.json",
+		"make": "npm run clean && npm install",
+		"eslint": "standard src"
+	},
+	"peerDependencies": {
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"devDependencies": {
+		"standard": "^17.1.2"
+	},
+	"dependencies": {}
+}

@@ -25,7 +25,7 @@ export default function ${pageName} () {
   const { state, fx } = useFx(functions)
 
   return (
-    <main className={css(${pageName}, '')}>
+    <main className={css('${pageName}', '')}>
       ${pageName}
     </main>
   )
@@ -61,7 +61,7 @@ function createComponent (name, isNext, isType) {
 import './style.css'
 import { css } from 'react-fx1'
 
-export default ({ children, name, value, type, className, style, readOnly, disabled, onClick = () => {} }) => {
+export default ({ name, value, className, style }) => {
   return (
     <article className={css('${componentName}', className)} style={style} name={name}>
       ${componentName}
@@ -93,7 +93,7 @@ import { useFx, css } from 'react-fx1'
 import functions from './functions'
 import './style.css'
 
-export default ({ children, name, value, type, className, style, readOnly, disabled, onClick = () => {} }) => {
+export default ({ name, value, className, style }) => {
   const { state, fx } = useFx(functions)
 
   return (

@@ -1,15 +1,12 @@
 import React, { useEffect, useRef } from 'react'
-import { useFx, ReactFx, useLocation, useResize } from 'react-fx1'
+import { useFx, ReactFx, useLocation } from 'react-fx1'
 import { Link } from 'components'
 import functions from './functions'
 
 export default function App () {
   const reactFx = useFx(functions)
   const { state, fx } = reactFx
-
-  // hooks
   const qs = useLocation()
-  const resize = useResize()
 
   const Page = state.page
   const page = useRef()
@@ -39,11 +36,7 @@ export default function App () {
       </div>
 
       <div ref={page}>
-        {Page &&
-          <Page
-            qs={qs}
-            resize={resize}
-          />}
+        {Page && <Page />}
       </div>
     </ReactFx>
   )

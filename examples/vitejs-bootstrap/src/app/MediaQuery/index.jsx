@@ -3,17 +3,18 @@ import { useFx, css } from 'react-fx1'
 import functions from './functions'
 import './style.css'
 
-export default function MediaQuery ({ resize }) {
+export default function MediaQuery () {
   const { state, fx } = useFx(functions)
 
   return (
-    <main className={css('MediaQuery', '')}>
+    <main className={css('MediaQuery', 'm-3')}>
       <div>
         <section>CSS @container </section>
 
-        <ul className='css-container'>
+        <ul>
           <li className='landscape'>landscape</li>
           <li className='portrait'>portrait</li>
+          <li><br /></li>
           <li className='xs'>XS</li>
           <li className='sm'>SM</li>
           <li className='md'>MD</li>
@@ -22,12 +23,6 @@ export default function MediaQuery ({ resize }) {
           <li className='xxl'>XXL</li>
         </ul>
 
-      </div>
-
-      <div>
-        <pre style={{ margin: '0 50px 0 50px' }}>
-          resize = {JSON.stringify(resize, undefined, 2)}
-        </pre>
       </div>
 
       <br />

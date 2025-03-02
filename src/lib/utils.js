@@ -1,12 +1,8 @@
 'use client'
 
 import { flushSync } from 'react-dom'
+import { useState, useEffect } from 'react'
 
-/**
- * css
- * @param  {...any} classNames
- * @returns
- */
 function css (...classNames) {
   return classNames.filter(e => e).reduce((accumulator, currentValue) => {
     if (typeof currentValue === 'string') {
@@ -20,13 +16,6 @@ function css (...classNames) {
   }, '').trim()
 }
 
-/**
- * startViewTransition
- * @param {*} fun
- * @param {*} ref
- * @param {*} viewTransitionName
- * @returns
- */
 function startViewTransition (
   fun = () => {},
   ref = null,
@@ -43,4 +32,33 @@ function startViewTransition (
   })()
 }
 
-export { css, startViewTransition }
+/**
+ * useLocation
+ */
+function useLocation () {
+  const getLocation = () => {
+    const hashAndQueryString = window.location.hash.split('?')
+
+    const queryString = Object.fromEntries(
+      new URLSearchParams(hashAndQueryString[1])
+    )
+
+    return {
+      hash: hashAndQueryString[0],
+      ...queryString
+    }
+  }
+
+  const [path, setPath] = useState(getLocation())
+
+  useEffect(() => {
+    window.addEventListener('popstate', () => setPath(getLocation()))
+    return () => {
+      window.removeEventListener('popstate', () => setPath(getLocation()))
+    }
+  }, [])
+
+  return path
+}
+
+export { css, startViewTransition, useLocation }

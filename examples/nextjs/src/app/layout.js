@@ -2,9 +2,9 @@
 
 import { useEffect, Suspense } from 'react'
 import 'assets/theme/index.css'
-import { useFx, ReactFx, Icon, I18n } from 'react-fx1'
+import { useFx, ReactFx } from 'react-fx1'
 import functions from './functions'
-import { Link, Icons, Translate } from 'components'
+import { Link, Icons, Icon, Translate, I18n } from 'components'
 
 function Layout ({ children }) {
   const reactfx = useFx(functions)
@@ -32,7 +32,8 @@ function Layout ({ children }) {
           <div style={{ display: 'flex', gap: '20px' }}>
 
             <Icon value='globe' />
-            <Translate />
+            <Translate value={state.i18nLocale} onChange={e => fx.changeI18n(e)} />
+
             <I18n value='page.name' args={['Sinuhe', 'Maceda', 'Bouchan']} />
 
             <button onClick={e => fx.increment(e)}>increment</button>

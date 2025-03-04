@@ -62,23 +62,7 @@ export default defineConfig(({ mode }) => {
           return html.replaceAll('%VERSION%', `version=${version}, env=${mode}, release-date=${new Date()}, git-hash=${gitHash}`)
         }
       }
-    ],
-
-    test: {
-      root: './',
-      watch: false,
-      environment: 'jsdom',
-      include: ['test/**/*.js', 'test/**/*.jsx'],
-      coverage: {
-        all: true,
-        reportsDirectory: '.coverage',
-        include: ['src/**/*.js', 'src/**/*.jsx'],
-        exclude: [
-          'src/index.jsx',
-          'src/assets/i18n'
-        ]
-      }
-    }
-
+    ]
+    
   }
 })

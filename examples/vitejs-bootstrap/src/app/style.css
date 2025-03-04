@@ -1,4 +1,7 @@
-.MediaQuery {
+.App {
+
+	background-color: var(--bs-secondary);
+
 	@media (orientation: landscape) {
 		.landscape {
 			background-color: var(--bs-primary);
@@ -46,4 +49,5 @@
 			background-color: var(--bs-primary);
 		}
 	}
+
 }

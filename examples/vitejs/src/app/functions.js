@@ -1,8 +1,5 @@
-import i18nFile from 'assets/i18n'
-
 const initialState = {
-  i18n: window.localStorage.getItem('i18n'),
-  i18nFile,
+  i18nLocale: window.localStorage.getItem('i18n'),
   loading: false,
   //
   num: 0
@@ -11,7 +8,7 @@ const initialState = {
 function changeI18n ({ set, payload }) {
   const { value } = payload.target
   set({
-    i18n: value
+    i18nLocale: value
   })
   window.localStorage.setItem('i18n', value)
 }

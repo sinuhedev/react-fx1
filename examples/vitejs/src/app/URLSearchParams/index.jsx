@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import { useFx, css, Link, useLocation } from 'react-fx1'
+import { useFx, css, useLocation } from 'react-fx1'
+import { Link } from 'components'
 import functions from './functions'
 import './style.css'
 

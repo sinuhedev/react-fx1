@@ -1,8 +1,10 @@
 import Pages from './Pages'
 import Icons from './Icons'
+import Icon from './Icon'
+import Link from './Link'
 import Counter from './Counter'
 import Counter2 from './Counter2'
-import Translate from './Translate'
+import { Translate, I18n } from './Translate'
 import TranslateComponent from './TranslateComponent'
 
-export { Pages, Counter, Counter2, Translate, TranslateComponent, Icons }
+export { Pages, Counter, Counter2, Translate, TranslateComponent, Icons, Icon, Link, I18n }

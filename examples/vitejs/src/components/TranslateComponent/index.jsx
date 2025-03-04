@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './style.css'
-import { css, I18n } from 'react-fx1'
+import { css } from 'react-fx1'
+import { I18n } from 'components'
 
 export default ({ children, name, value, type, className, style, readOnly, disabled, onClick = () => {} }) => {
   return (

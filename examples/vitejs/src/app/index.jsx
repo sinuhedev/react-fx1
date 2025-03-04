@@ -1,6 +1,6 @@
 import React from 'react'
-import { useFx, ReactFx, I18n, Link, Icon } from 'react-fx1'
-import { Pages, Translate, Icons } from 'components'
+import { useFx, ReactFx } from 'react-fx1'
+import { Pages, Translate, Icons, Icon, Link, I18n } from 'components'
 import functions from './functions'
 
 export default function App () {
@@ -12,7 +12,9 @@ export default function App () {
       <ReactFx value={reactFx}>
         <div style={{ display: 'flex', gap: '20px' }}>
           <Icon value='globe' />
-          <Translate />
+
+          <Translate value={state.i18nLocale} onChange={e => fx.changeI18n(e)} />
+
           <I18n value='page.name' args={['Sinuhe', 'Maceda', 'Bouchan']} />
 
           <button onClick={e => fx.increment(e)}>increment</button>

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import functions from './functions'
-import { useFx, css, I18n } from 'react-fx1'
+import { useFx, css } from 'react-fx1'
 import './style.css'
-import { TranslateComponent } from 'components'
+import { TranslateComponent, I18n } from 'components'
 
 export default function Translate () {
   const { state, fx } = useFx(functions)

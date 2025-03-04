@@ -15,13 +15,10 @@ export default ({ className, style }) => {
 
         switch (path.length) {
           case 1:
-            page = await import(`/app/${path[0]}/index.jsx`)
+            page = await import(`../../app/${path[0]}/index.jsx`)
             break
           case 2:
-            page = await import(`/app/${path[0]}/${path[1]}/index.jsx`)
-            break
-          case 3:
-            page = await import(`/app/${path[0]}/${path[1]}/${path[2]}/index.jsx`)
+            page = await import(`../../app/${path[0]}/${path[1]}/index.jsx`)
             break
         }
       } catch (e) {

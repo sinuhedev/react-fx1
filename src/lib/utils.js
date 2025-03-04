@@ -32,9 +32,6 @@ function startViewTransition (
   })()
 }
 
-/**
- * useLocation
- */
 function useLocation () {
   const getLocation = () => {
     const hashAndQueryString = window.location.hash.split('?')

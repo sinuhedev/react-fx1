@@ -3,7 +3,7 @@ import { useFx, css } from 'react-fx1'
 import functions from './functions'
 import './style.css'
 
-export default function ContextPage ({ }) {
+export default function ContextPage () {
   const { state, fx, context } = useFx(functions)
 
   useEffect(() => {

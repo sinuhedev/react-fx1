@@ -1,14 +1,14 @@
-import React, { useEffect, useState, useRef, lazy } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useLocation, startViewTransition } from 'react-fx1'
 
 export default ({ className, style }) => {
   const [Page, setPage] = useState()
-  const pageRef = useRef()
-  const qs = useLocation()
+  const ref = useRef()
+  const { hash } = useLocation()
 
   useEffect(() => {
-    ;(async () => {
-      let page = ['#/', ''].includes(qs.hash) ? 'Home' : qs.hash.substring(2)
+    startViewTransition(async () => {
+      let page = ['#/', ''].includes(hash) ? 'Home' : hash.substring(2)
 
       try {
         const path = page.split('/')
@@ -29,16 +29,13 @@ export default ({ className, style }) => {
         page = await import('../../app/Http/NotFound/index.jsx')
       }
 
-      // startViewTransition(setPage(page), pageRef, 'fade')
-
-      const Page2 = page.default
-
-      setPage(<Page2 />)
-    })()
-  }, [qs.hash])
+      const Page = page.default
+      setPage(<Page />)
+    }, ref, 'fade')
+  }, [hash])
 
   return Page &&
-    <div ref={pageRef} className={className} style={style}>
+    <div ref={ref} className={className} style={style}>
       {Page}
     </div>
 }

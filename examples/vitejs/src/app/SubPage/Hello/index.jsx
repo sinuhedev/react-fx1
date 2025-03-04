@@ -8,7 +8,7 @@ export default function SubPageHello () {
 
   return (
     <main className={css('SubPageHello', '')}>
-      SubPageHello
+      SubPage / Hello
     </main>
   )
 }

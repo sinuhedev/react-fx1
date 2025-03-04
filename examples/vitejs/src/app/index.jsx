@@ -1,40 +1,11 @@
-import React, { useEffect, useRef, lazy, Suspense, useState, flushSync } from 'react'
-import { useFx, ReactFx, useLocation, startViewTransition, I18n, Link, Icon } from 'react-fx1'
-import { Translate, Icons } from 'components'
+import React from 'react'
+import { useFx, ReactFx, I18n, Link, Icon } from 'react-fx1'
+import { Pages, Translate, Icons } from 'components'
 import functions from './functions'
 
 export default function App () {
   const reactFx = useFx(functions)
   const { state, fx } = reactFx
-
-  const [Page, setPage] = useState()
-  const pageRef = useRef()
-  const qs = useLocation()
-
-  useEffect(() => {
-    let page = ['#/', ''].includes(qs.hash) ? 'Home' : qs.hash.substring(2)
-
-    try {
-      const path = page.split('/')
-
-      switch (path.length) {
-        case 1:
-          page = lazy(() => import(`./${path[0]}/index.jsx`))
-          break
-        case 2:
-          page = lazy(() => import(`./${path[0]}/${path[1]}/index.jsx`))
-          break
-        case 3:
-          page = lazy(() => import(`./${path[0]}/${path[1]}/${path[2]}/index.jsx`))
-          break
-      }
-    } catch (e) {
-      console.error(e)
-      page = lazy(() => import('./Http/NotFound/index.jsx'))
-    }
-
-    startViewTransition(setPage(page), pageRef, 'fade')
-  }, [qs.hash])
 
   return (
     <>
@@ -99,7 +70,7 @@ export default function App () {
           </Link>
         </div>
 
-        {Page && <div ref={pageRef}><Page ref={pageRef} /></div>}
+        <Pages className='m-2' />
 
         <Icons />
 

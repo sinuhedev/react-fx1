@@ -16,29 +16,6 @@ function css (...classNames) {
   }, '').trim()
 }
 
-function i18n (value, args, i18nLocale, i18nFile) {
-  if (!value) return ''
-  let locale = i18nFile.locales.includes(i18nLocale) ? i18nLocale : i18nFile.defaultLocale
-  locale = i18nFile.locales.indexOf(locale)
-
-  try {
-    let text = value.split('.').reduce((ac, el) => ac[el], i18nFile)
-    text = text[locale]
-
-    if (args) {
-      text = text.replace(
-        /([{}])\\1|[{](.*?)(?:!(.+?))?[}]/g,
-        (match, literal, number) => args[number] || match
-      )
-    }
-
-    return text
-  } catch (e) {
-    console.error('Error in [il8n] => ' + value)
-    return value
-  }
-}
-
 function startViewTransition (
   fun = () => {},
   ref = null,
@@ -81,4 +58,4 @@ function useLocation () {
   return path
 }
 
-export { css, i18n, startViewTransition, useLocation }
+export { css, startViewTransition, useLocation }

@@ -10,7 +10,7 @@ export default function App () {
   return (
     <>
       <ReactFx value={reactFx}>
-        <div style={{ display: 'flex', gap: '20px' }}>
+        <header style={{ display: 'flex', gap: '20px' }}>
           <Icon value='globe' />
 
           <Translate value={state.i18nLocale} onChange={e => fx.changeI18n(e)} />
@@ -26,11 +26,9 @@ export default function App () {
           {state.num}
           {'  '}
           {state.loading ? <span> Loading... </span> : <span> View.. </span>}
-        </div>
+        </header>
 
-        <br />
-
-        <div>
+        <aside className='m-2'>
           <Link href='/' className='mr-2'>
             /
           </Link>
@@ -70,7 +68,7 @@ export default function App () {
           <Link href='#/NO' className='mr-2'>
             NO
           </Link>
-        </div>
+        </aside>
 
         <Pages className='m-2' />
 

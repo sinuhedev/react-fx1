@@ -7,12 +7,12 @@ export default function Image () {
   const { state, fx } = useFx(functions)
 
   return (
-    <main className={css('Image', '')}>
+    <section className={css('Image', '')}>
 
       <img src='logo.svg' />
 
       <div className='img' />
 
-    </main>
+    </section>
   )
 }

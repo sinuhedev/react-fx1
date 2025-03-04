@@ -8,7 +8,7 @@ export default function Translate () {
   const { state, fx } = useFx(functions)
 
   return (
-    <main className={css('Translate', '')}>
+    <section className={css('Translate', '')}>
       <I18n value='page.name' args={['Sinuhe', 'Maceda', 'Bouchan']} />
 
       <ul>
@@ -26,6 +26,6 @@ export default function Translate () {
         </li>
         <li><TranslateComponent /></li>
       </ul>
-    </main>
+    </section>
   )
 }

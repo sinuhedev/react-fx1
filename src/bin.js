@@ -25,9 +25,9 @@ export default function ${pageName} () {
   const { state, fx } = useFx(functions)
 
   return (
-    <main className={css('${pageName}', '')}>
+    <section className={css('${pageName}', '')}>
       ${pageName}
-    </main>
+    </section>
   )
 }
 `)

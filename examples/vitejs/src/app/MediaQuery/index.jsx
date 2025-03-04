@@ -7,7 +7,7 @@ export default function MediaQuery () {
   const { state, fx } = useFx(functions)
 
   return (
-    <main className={css('MediaQuery', '')}>
+    <section className={css('MediaQuery', '')}>
       <div>
         <section>CSS @container </section>
 
@@ -24,6 +24,6 @@ export default function MediaQuery () {
 
       </div>
 
-    </main>
+    </section>
   )
 }

@@ -4,11 +4,11 @@ import { useLocation, startViewTransition } from 'react-fx1'
 export default ({ className, style }) => {
   const [Page, setPage] = useState()
   const ref = useRef()
-  const { hash } = useLocation()
+  const qs = useLocation()
 
   useEffect(() => {
     startViewTransition(async () => {
-      let page = ['#/', ''].includes(hash) ? 'Home' : hash.substring(2)
+      let page = ['#/', ''].includes(qs.hash) ? 'Home' : qs.hash.substring(2)
 
       try {
         const path = page.split('/')
@@ -29,10 +29,10 @@ export default ({ className, style }) => {
       const Page = page.default
       setPage(<Page />)
     }, ref, 'fade')
-  }, [hash])
+  }, [qs.hash])
 
   return Page &&
-    <div ref={ref} className={className} style={style}>
+    <main ref={ref} className={className} style={style}>
       {Page}
-    </div>
+    </main>
 }

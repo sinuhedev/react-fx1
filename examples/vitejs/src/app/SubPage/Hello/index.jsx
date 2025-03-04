@@ -7,8 +7,8 @@ export default function SubPageHello () {
   const { state, fx } = useFx(functions)
 
   return (
-    <main className={css('SubPageHello', '')}>
+    <section className={css('SubPageHello', '')}>
       SubPage / Hello
-    </main>
+    </section>
   )
 }

@@ -13,7 +13,7 @@ export default function URLSearchParams () {
   }, [qs])
 
   return (
-    <main className={css('URLSearchParams', '')}>
+    <section className={css('URLSearchParams', '')}>
       URLSearchParams
       <br />
       <br />
@@ -29,6 +29,6 @@ export default function URLSearchParams () {
       <pre style={{ margin: '0 50px 0 50px' }}>
         {JSON.stringify(qs, undefined, 2)}
       </pre>
-    </main>
+    </section>
   )
 }

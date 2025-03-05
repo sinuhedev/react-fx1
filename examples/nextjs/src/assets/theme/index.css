@@ -101,3 +101,7 @@ a {
 .p-2 {
   padding: 20px;
 }
+
+nextjs-portal {
+  display: none;
+}

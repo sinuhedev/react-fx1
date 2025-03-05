@@ -1,11 +1,7 @@
 const initialState = {
   i18nLocale: '',
   loading: false,
-  services: {
-    api: {}
-  },
   num: 0
-
 }
 
 function init ({ set }) {

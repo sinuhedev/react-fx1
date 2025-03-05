@@ -10,7 +10,7 @@ export default function CounterPage () {
   const { state, fx } = useFx(functions)
 
   return (
-    <main className={css('CounterPage')}>
+    <section className={css('CounterPage')}>
 
       <div className={css('', 'class-test', {}, null, true, false, [], { 'css-false': false }, undefined, { 'css-true': true })}>
         CSS
@@ -37,6 +37,6 @@ export default function CounterPage () {
         }}
       />
 
-    </main>
+    </section>
   )
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, Suspense } from 'react'
+import { useEffect, Suspense, useRef } from 'react'
 import 'assets/theme/index.css'
 import { useFx, ReactFx } from 'react-fx1'
 import functions from './functions'
@@ -9,6 +9,7 @@ import { Link, Icons, Icon, Translate, I18n } from 'components'
 function Layout ({ children }) {
   const reactfx = useFx(functions)
   const { state, fx } = reactfx
+  const ref = useRef()
 
   useEffect(() => {
     fx.init()
@@ -29,7 +30,7 @@ function Layout ({ children }) {
 
         <ReactFx value={reactfx}>
 
-          <div style={{ display: 'flex', gap: '20px' }}>
+          <div className='m-2' style={{ display: 'flex', gap: '20px' }}>
 
             <Icon value='globe' />
             <Translate value={state.i18nLocale} onChange={e => fx.changeI18n(e)} />
@@ -47,9 +48,7 @@ function Layout ({ children }) {
             {state.loading ? <span> Loading... </span> : <span> View.. </span>}
           </div>
 
-          <br />
-
-          <div>
+          <div className='m-2'>
             <Link href='/' className='mr-2'>
               /
             </Link>
@@ -89,11 +88,9 @@ function Layout ({ children }) {
             <Link href='/NO'>NO</Link>
           </div>
 
-          <br />
-
-          <Suspense fallback={<div />}>
+          <main ref={ref} className='m-2'>
             {children}
-          </Suspense>
+          </main>
 
         </ReactFx>
 

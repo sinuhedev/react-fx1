@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
-import { useFx, css, useLocation } from 'react-fx1'
+import { useFx, css } from 'react-fx1'
 import { Link } from 'components'
 import functions from './functions'
 import './style.css'
 
-export default function URLSearchParams () {
+export default function URLSearchParams ({ qs }) {
   const { state, fx } = useFx(functions)
-  const qs = useLocation()
 
   useEffect(() => {
     console.info(qs)

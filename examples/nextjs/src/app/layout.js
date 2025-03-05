@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, Suspense, useRef } from 'react'
+import { useEffect } from 'react'
 import 'assets/theme/index.css'
 import { useFx, ReactFx } from 'react-fx1'
 import functions from './functions'
@@ -9,7 +9,6 @@ import { Link, Icons, Icon, Translate, I18n } from 'components'
 function Layout ({ children }) {
   const reactfx = useFx(functions)
   const { state, fx } = reactfx
-  const ref = useRef()
 
   useEffect(() => {
     fx.init()
@@ -88,7 +87,7 @@ function Layout ({ children }) {
             <Link href='/NO'>NO</Link>
           </div>
 
-          <main ref={ref} className='m-2'>
+          <main className='m-2'>
             {children}
           </main>
 

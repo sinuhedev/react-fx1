@@ -12,6 +12,7 @@ export default ({
   readOnly,
   disabled,
   I18n,
+  animation = 'count',
   onChange
 }) => {
   const self = useRef()
@@ -21,10 +22,11 @@ export default ({
       className={css('Counter-component', className)}
       style={style}
       name={name}
+
     >
       <button
         onClick={e => {
-          startViewTransition(() => onChange(e), self, 'count')
+          startViewTransition(() => onChange(e), self, animation)
         }}
       >
         Increment

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useFx, ReactFx } from 'react-fx1'
-import { Pages, Translate, Icons, Icon, Link, I18n } from 'components'
+import { Pages, Translate, Icon, Link, I18n } from 'components'
 import functions from './functions'
 
 export default function App () {
@@ -71,8 +71,6 @@ export default function App () {
         </aside>
 
         <Pages className='m-2' />
-
-        <Icons />
 
       </ReactFx>
     </>

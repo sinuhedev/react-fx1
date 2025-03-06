@@ -1,4 +1,4 @@
-import { useEffect, useState, flushSync, useRef } from 'react'
+import { useRef } from 'react'
 import './style.css'
 import { startViewTransition, css } from 'react-fx1'
 

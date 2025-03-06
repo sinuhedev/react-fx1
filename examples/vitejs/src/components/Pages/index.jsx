@@ -1,10 +1,22 @@
 import React, { useEffect, useState, useRef, lazy } from 'react'
-import { useLocation, startViewTransition } from 'react-fx1'
+import { startViewTransition } from 'react-fx1'
 
 export default ({ className, style }) => {
+  const useLocation = () => ({
+    hash: window.location.hash.split('?')[0],
+    ...Object.fromEntries(new URLSearchParams(window.location.hash.split('?')[1]))
+  })
+
   const [Page, setPage] = useState()
   const ref = useRef()
-  const qs = useLocation()
+  const [qs, setQueryString] = useState(useLocation())
+
+  useEffect(() => {
+    window.addEventListener('popstate', () => setQueryString(useLocation()))
+    return () => {
+      window.removeEventListener('popstate', () => setQueryString(useLocation()))
+    }
+  }, [])
 
   useEffect(() => {
     const page = lazy(async () => {

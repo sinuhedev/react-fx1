@@ -1,7 +1,7 @@
 {
 	"name": "react-fx1",
 	"description": "Create fast web applications",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"type": "module",
 	"license": "MIT",
 	"author": {

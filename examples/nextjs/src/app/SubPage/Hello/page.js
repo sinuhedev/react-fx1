@@ -10,7 +10,7 @@ export default function SubPageHello () {
 
   return (
     <section className={css('SubPageHello', '')}>
-      SubPageHello
+      SubPage / Hello
     </section>
   )
 }

@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react'
 import { useFx, css } from 'react-fx1'
 import functions from './functions'
-import { Counter, Counter2 } from 'components'
+import { Counter } from 'components'
 import './style.css'
 
 export default function CounterPage () {
@@ -30,11 +30,12 @@ export default function CounterPage () {
       />
       <br />
       <br />
-      <Counter2
+      <Counter
         value={state.count2}
         onChange={() => {
           fx.set({ count2: state.count2 + 10 })
         }}
+        animation='count2'
       />
 
     </section>

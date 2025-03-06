@@ -12,7 +12,8 @@ export default ({
   readOnly,
   disabled,
   I18n,
-  onChange
+  onChange,
+  animation = 'count'
 }) => {
   const self = useRef()
 
@@ -24,7 +25,7 @@ export default ({
     >
       <button
         onClick={e => {
-          startViewTransition(() => onChange(e), self, 'count')
+          startViewTransition(() => onChange(e), self, animation)
         }}
       >
         Increment

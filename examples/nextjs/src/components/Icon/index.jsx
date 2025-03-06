@@ -2,8 +2,6 @@ import React from 'react'
 
 export default ({
   value,
-  className = '',
-  style = {},
   width,
   height,
   size = 16,
@@ -13,12 +11,10 @@ export default ({
   strokeWidth = 2,
   strokeLinecap = 'round',
   strokeLinejoin = 'round',
-  children
+  ...props
 }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    className={className}
-    style={style}
     width={width ?? size}
     height={height ?? size}
     viewBox={viewBox}
@@ -27,7 +23,7 @@ export default ({
     strokeWidth={strokeWidth}
     strokeLinecap={strokeLinecap}
     strokeLinejoin={strokeLinejoin}
-    {...children}
+    {...props}
   >
     <use href={`#${value}`} />
   </svg>

@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import 'assets/theme/index.css'
 import { useFx, ReactFx } from 'react-fx1'
 import functions from './functions'
-import { Link, Icons, Icon, Translate, I18n } from 'components'
+import { Link, Icon, Translate, I18n, Icons } from 'components'
 
 function Layout ({ children }) {
   const reactfx = useFx(functions)

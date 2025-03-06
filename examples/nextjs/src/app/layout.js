@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect } from 'react'
-import 'assets/theme/index.css'
 import { useFx, ReactFx } from 'react-fx1'
 import functions from './functions'
 import { Link, Icon, Translate, I18n, Icons } from 'components'
+import 'assets/theme/index.css'
 
 function Layout ({ children }) {
   const reactfx = useFx(functions)
@@ -25,12 +25,12 @@ function Layout ({ children }) {
         />
         <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' />
       </head>
-      <body className=''>
+
+      <body>
 
         <ReactFx value={reactfx}>
 
-          <div className='m-2' style={{ display: 'flex', gap: '20px' }}>
-
+          <header className='m-2' style={{ display: 'flex', gap: '20px' }}>
             <Icon value='globe' />
             <Translate value={state.i18nLocale} onChange={e => fx.changeI18n(e)} />
 
@@ -45,9 +45,9 @@ function Layout ({ children }) {
             {state.num}
             {'  '}
             {state.loading ? <span> Loading... </span> : <span> View.. </span>}
-          </div>
+          </header>
 
-          <div className='m-2'>
+          <aside className='m-2'>
             <Link href='/' className='mr-2'>
               /
             </Link>
@@ -85,7 +85,7 @@ function Layout ({ children }) {
               MediaQuery
             </Link>
             <Link href='/NO'>NO</Link>
-          </div>
+          </aside>
 
           <main className='m-2'>
             {children}

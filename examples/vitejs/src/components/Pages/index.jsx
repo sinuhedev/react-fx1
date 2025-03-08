@@ -2,26 +2,26 @@ import React, { useEffect, useState, useRef, lazy } from 'react'
 import { startViewTransition } from 'react-fx1'
 
 export default ({ className, style }) => {
-  const useLocation = () => ({
+  const [Page, setPage] = useState()
+  const ref = useRef()
+
+  const getLocation = () => ({
     hash: window.location.hash.split('?')[0],
     ...Object.fromEntries(new URLSearchParams(window.location.hash.split('?')[1]))
   })
-
-  const [Page, setPage] = useState()
-  const ref = useRef()
-  const [qs, setQueryString] = useState(useLocation())
+  const [qs, setQS] = useState(getLocation())
 
   useEffect(() => {
-    window.addEventListener('popstate', () => setQueryString(useLocation()))
+    window.addEventListener('popstate', () => setQS(getLocation()))
     return () => {
-      window.removeEventListener('popstate', () => setQueryString(useLocation()))
+      window.removeEventListener('popstate', () => setQS(getLocation()))
     }
   }, [])
 
   useEffect(() => {
     const page = lazy(async () => {
+      let currentPage = ['#/', ''].includes(qs.hash) ? 'Home' : qs.hash.substring(2)
       try {
-        let currentPage = ['#/', ''].includes(qs.hash) ? 'Home' : qs.hash.substring(2)
         const path = currentPage.split('/')
 
         switch (path.length) {
@@ -45,6 +45,6 @@ export default ({ className, style }) => {
 
   return Page &&
     <main ref={ref} className={className} style={style}>
-      {Page ? <Page /> : <div />}
+      {Page ? <Page qs={qs} /> : <div />}
     </main>
 }

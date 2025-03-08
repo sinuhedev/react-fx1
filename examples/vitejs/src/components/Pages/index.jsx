@@ -26,14 +26,14 @@ export default ({ className, style }) => {
 
         switch (path.length) {
           case 1:
-            currentPage = `../../app/${path[0]}/index.jsx`
+            currentPage = await import(`../../app/${path[0]}/index.jsx`)
             break
           case 2:
-            currentPage = `../../app/${path[0]}/${path[1]}/index.jsx`
+            currentPage = await import(`../../app/${path[0]}/${path[1]}/index.jsx`)
             break
         }
 
-        return await import(currentPage)
+        return currentPage
       } catch (e) {
         console.error(e)
         return await import('../../app/Http/NotFound/index.jsx')
@@ -45,6 +45,6 @@ export default ({ className, style }) => {
 
   return Page &&
     <main ref={ref} className={className} style={style}>
-      <Page qs={qs} />
+      {Page ? <Page /> : <div />}
     </main>
 }

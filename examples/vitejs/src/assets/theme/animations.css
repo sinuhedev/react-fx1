@@ -17,12 +17,46 @@
 
 /* fade */
 
-::view-transition-old(fade),
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+
+::view-transition-old(fade) {
+	animation: fadeOut 0.3s;
+}
+
 ::view-transition-new(fade) {
-	animation-duration: 0.3s;
+	animation: fadeIn 0.3s;
 }
 
 /* count */
+
+@keyframes scale {
+	0% {
+		scale: 1 var(--scale-start, 1);
+	}
+
+	100% {
+		scale: 1 var(--scale-end, 1);
+	}
+}
 
 ::view-transition-new(count),
 ::view-transition-old(count) {
@@ -41,6 +75,8 @@
 	transform-origin: 50% 100%;
 }
 
+/* count2 */
+
 @keyframes scale {
 	0% {
 		scale: 1 var(--scale-start, 1);
@@ -51,11 +87,8 @@
 	}
 }
 
-/* count2 */
-
 ::view-transition-new(count2),
 ::view-transition-old(count2) {
-	animation-duration: 1s;
 	animation: scale 0.25s;
 	height: 100%;
 	width: 100%;
@@ -69,14 +102,4 @@
 ::view-transition-old(count2) {
 	--scale-end: 0;
 	transform-origin: 10% 0%;
-}
-
-@keyframes scale {
-	0% {
-		scale: 1 var(--scale-start, 1);
-	}
-
-	100% {
-		scale: 1 var(--scale-end, 1);
-	}
 }

@@ -15,7 +15,7 @@ export default ({
   onChange,
   animation = 'count'
 }) => {
-  const self = useRef()
+  const ref = useRef()
 
   return (
     <article
@@ -25,13 +25,13 @@ export default ({
     >
       <button
         onClick={e => {
-          startViewTransition(() => onChange(e), self, animation)
+          startViewTransition(onChange(e), ref, animation)
         }}
       >
         Increment
       </button>
 
-      <label ref={self}>{value}</label>
+      <label ref={ref}>{value}</label>
     </article>
   )
 }

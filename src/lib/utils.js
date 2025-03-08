@@ -1,7 +1,5 @@
 'use client'
 
-import { flushSync } from 'react-dom'
-
 const css = (...classNames) => (
   classNames.filter(e => e).reduce((accumulator, currentValue) => {
     if (typeof currentValue === 'string') {
@@ -16,11 +14,13 @@ const css = (...classNames) => (
 )
 
 const startViewTransition = async (fun = () => {}, ref = null, viewTransitionName = '') => {
-  if (document.startViewTransition && ref && ref.current) {
+  if (!document.startViewTransition) return fun()
+
+  if (ref && ref.current) {
     ref.current.style.viewTransitionName = viewTransitionName
-    await document.startViewTransition(() => flushSync(() => fun())).finished
+    await document.startViewTransition(fun).finished
     ref.current.style.viewTransitionName = ''
-  } else { fun() }
+  }
 }
 
 export { css, startViewTransition }

@@ -20,7 +20,7 @@
 		"autoprefixer": "^10.4.20",
 		"bootstrap": "^5.3.3",
 		"sass": "1.71.0",
-		"vite": "^6.2.0"
+		"vite": "^6.2.1"
 	},
 	"dependencies": {
 		"react": "^19.0.0",
